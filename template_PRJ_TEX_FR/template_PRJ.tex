@@ -431,7 +431,7 @@ Les spécifications techniques du projet ne sont pas nombreuses mais il est néc
         \item \textbf{Utilisation d'un micro fourni par l'école.}
         \item \textbf{Passez par la transformée de Fourier à partir de la bibliothèque Arduino FFT.} 
 \end{itemize}
-\\
+\vspace{2mm}
 
 \newpage
 \section*{V. Conception}
@@ -478,23 +478,19 @@ Le lecteur doit être capable de comprendre les enjeux techniques et de dévelop
 \noindent Il est question ici de montrer les performances techniques du système et de valider le développement module par module puis au global (intégration) en accord avec la partie IV.
 
 \vspace{2mm}
-\noindent Chaque résultat (bien souvent des courbes) doit être décrit comme suit : 
-\begin{itemize}
-	\item Ce qui a été fait ;
-	\item Ce que l’on est censé obtenir et critère de réussite du test ;
-	\item Ce que l’on obtient ;
-	\item Conclusion : validation ou non du bon fonctionnement du module.
-\end{itemize}
 
-\noindent Test concernant l'entrainement de notre modèle d'IA : 
+\noindent \textbf{Test concernant l'entrainement de notre modèle d'IA} : 
 \begin{itemize}
 	\item Nous avons réalisé à un modèle d'IA en Arduino afin d'améliorer la précision des signaux captés et mieux reconnaître les lettres/chiffres/claps captés;
 	\item On est censé obtenir une suite de courbe qui se lisse au fur et à mesure des tests grâce au machine learning pour au final avoir une courbe "moyenne" du signal correspondant au mot capté par le micro;
-	\item Ce que l’on obtient est visible sur la photo ci-dessous, nous avons entrainé notre modèle pour détecter au mieux les chiffres 1,2,3 et un clap comme demandé dans le brief du projet:
+	\item Ce que l’on obtient est visible sur la photo ci-dessous, nous avons entrainé notre modèle pour détecter au mieux les chiffres 1,2,3 et un clap comme demandé dans le brief du projet: \\ \\
+	\vspace{2mm}
 	\includegraphics[width=\textwidth]{training_IAArduino.png}
-	\includegraphics[width=\textwidth]{test_123clap.png}
-	\item Conclusion : validation ou non du bon fonctionnement du module.
+	\includegraphics[width=\textwidth]{test_123clap.png} \\ \\  
+	\item On voit distinctement sur les photos ci-dessus que cet entrainement de notre IA est totalement fonctionnel et que les tests donne ce que nous voulons, à savoir une meilleure détection des signaux correspondant aux commandes vocales 1,2,3 et le clap.
 \end{itemize}
+
+\vspace{3mm}
 
 \subsection*{A. Module 1}
 \subsection*{B. Module 2}
