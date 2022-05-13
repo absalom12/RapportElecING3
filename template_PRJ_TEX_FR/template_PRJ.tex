@@ -1,6 +1,6 @@
 \documentclass[a4paper,11pt]{book}
-\usepackage[english]{babel}
-\usepackage[T1]{fontenc}
+\usepackage[english]{babel}  
+\usepackage[T1]{fontenc} 
 \usepackage{helvet} % équivalent Arial
 
 % R real
@@ -30,21 +30,21 @@
 \definecolor{ao(english)}{rgb}{0.0, 0.5, 0.0}
 
 \lstdefinestyle{mystyle}{
-	backgroundcolor=\color{backcolour},
+	backgroundcolor=\color{backcolour},   
 	commentstyle=\color{ao(english)},
 	keywordstyle=\color{blue},
 	numberstyle=\tiny\color{codegray},
 	stringstyle=\color{codepurple},
 	basicstyle=\footnotesize,
-	breakatwhitespace=false,
-	breaklines=true,
-	captionpos=b,
-	keepspaces=true,
-	numbers=left,
-	numbersep=5pt,
-	showspaces=false,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
 	showstringspaces=false,
-	showtabs=false,
+	showtabs=false,                  
 	tabsize=2
 }
 
@@ -291,7 +291,7 @@
 
 
 \begin{document}
-
+	
 	\begin{titlepage}
 	\title{\vspace{-5em}
 		\begin{figure}[htb]
@@ -303,23 +303,23 @@
 			\begin{minipage}[t]{.45\textwidth}
 				\centering
 				\flushright\vspace{-12mm}\Large{\textbf{ING{3}}\\ Groupe {5}}
-			\end{minipage}
+			\end{minipage}  
 		\end{figure}
 		\normalsize \textsc{} \\ [1.2cm]
 		\HRule{1.5pt} \\ [0.5cm]
 		\LARGE \textbf{\Large{RAPPORT DE PROJET}\\ \vspace{5mm}
 			\Huge{\textcolor{ece}{PROJET : {Reconnaissance vocale}}}}
-		\HRule{1.5pt} \\
+		\HRule{1.5pt} \\ 
 		\normalsize  \vspace{1cm}
 		\fcolorbox{white}{anti-flashwhite}{\begin{minipage}{16cm}\vspace{4cm}\textbf{RÉSUMÉ} – Quel est le contexte et la problématique du projet ? Quels sont les objectifs techniques ? Dans quel contexte faites-vous ce projet ? [maximum 20 lignes]	\vspace{4cm}\end{minipage}}}
 	\date{Mathis ESMILLER, Clément LAMBERT, Thomas LOPEZ\\ Nous attestons que ce travail est original, qu’il est le fruit d’un travail commun au binôme et qu’il a été rédigé de manière autonome. \\ \textbf{{Paris, le 15/05/2022}}}
-
+	
 	\author{}
 \end{titlepage}
+	
 
-
-
-
+	
+	
 	\maketitle
 \section*{Table des matières}
 \begin{tabbing}
@@ -383,31 +383,41 @@ Renseigner ici sous forme de tableau les principaux acronymes, leurs significati
 Notre équipe est composé de trois élèves:\\ \\
 
 \textbf{Mathis ESMILLER}.\\
-Spécialiste en électronique, Mathis sera l'année prochaine en majeur Système Embarquée, c'est pour cette raison qu'il a été le plus à même de remplir le poste de chef de projet en guidant les deux autres membres du projet. À l'aise avec les montages électroniques sur breadboard et dans la théorie, c'est ce type de projet qui lui permet de s'épanouir au sein de l'ECE. \\
+Spécialiste en électronique, Mathis sera l'année prochaine en majeur Système Embarquée, c'est pour cette raison qu'il a été le plus à même de remplir le poste de chef de projet en guidant les deux autres membres du projet. À l'aise avec les montages électroniques sur breadboard et dans la théorie, la reconnaissance vocale est le type de projet qui lui permet de s'épanouir au sein de l'ECE. A déjà collaboré avec Thomas lors du projet en JAVA de début de semestre. \\
 
 \textbf{Clément LAMBERT}.\\
-Futur OCRES, Clément a su participer activement et efficacement à ce projet d'électronique grâce à sa capacité d'adaptation et ses connaissances en électronique. \\
+Futur OCRES, Clément a su participer activement et efficacement à ce projet d'électronique grâce à sa capacité d'adaptation et ses connaissances en électronique. À l'aise avec l'électronique théorique, il lui tenait à cœur d'aider au bon déroulement du projet. \\
 
 \textbf{Thomas LOPEZ}.\\
-Futur OCRES également, Thomas a comme qualité principal l'informatique et un esprit de synthèse développé. \\
+Futur OCRES également, Thomas a comme qualités principales l'informatique (Arduino), un esprit de synthèse développé et la gestion de projet. Il a pour habitude de mener l'ensemble des projets auxquels il participe à bien. A déjà collaboré avec Mathis sur le projet d'informatique en JAVA. \\ 
 
 \subsection*{B. Organisation de l'équipe}
-Mathis, chef de projet, a travaillé principalement sur le montage électronique sur bread board ainsi que sur . \\
+Mathis, chef de projet, le plus à l'aise en électronique du groupe, il a principalement travaillé sur le montage électronique du projet, fais des retours sur la partie Arduino ainsi que les différents tests permettant de tester la fonctionnilaté pratique du projet. \\
 
-Clément a su participer activement et efficacement à ce projet d'électronique grâce à sa capacité d'adaptation et ses connaissances en électronique. Notamment fort en électronique théorique, il a su faire preuve de rigueur dans ses démonstrations pour prouver théoriquement le montage dont nous avons besoin ainsi que les valeurs des composants choisies.\\
+Clément, compétent en électronique théorique, a su faire preuve de rigueur dans ses démonstrations pour prouver de façon théorique le montage dont nous avons besoin pour réaliser la reconnaissance vocale à partir de l'Arduino donnée ainsi que les valeurs des composants choisies. Il a été un vecteur de communication enter Mathis et Thomas. \\
 
 
-Thomas, en ses qualités de développeur, a travaillé principalement sur le code Arduino ainsi que sur le rapport en collaboration avec Clément.\\
+Thomas, en ses qualités de développeur, a travaillé principalement sur le code Arduino à partir de la bibliothéque Arduino sur la FFT ainsi que sur le rapport en collaboration avec Clément. Il a également apporté son expérience acquise en dehors des cours en gestion de projet pour organiser l'avancement de ce projet d'électronique. \\
 
 \subsection*{C. Diagramme de Gantt}
-Comment est utilisé le temps alloué au projet ?
+Comment est utilisé le temps alloué au projet ? 
 
 \newpage
 \section*{IV. Contexte et problématique}
 \subsection*{A. Contexte}
-Quel est le contexte économique et ou sociétal du projet ?\\
-\noindent Comment est née l’invention / la technologie du projet, comment a-t-elle évolué ?
+Considéré aujourd'hui comme gadgets high-tech, les assistants à reconnaissance comme Siri (Apple) ou Alexa (Amazon) sont vendus à plus de 200 millions d'exemplaires à travers le monde. Un nombre important lié au phénomène de full connectivité amenée par la digitalisation de notre monde, les utilisateurs ne veulent plus utilisé de télécommandes pour diriger les appareils électroniques dans leur domicile. \\ \\
+Économiquement, on peut donc dire que la reconnaissance vocale est applicable au moins à ce type d'applications de full connectivité, croissantes sur le marché. Relativement simple à faire, la marge réalisée sur la vente est presque entièrement réalisée par la plus-value technologique apportée par la conception électronique du produit. \\ 
+De plus, les GAFA, leaders de ce type de solutions réalisent de nombreux revenus grâce à l'ensemble des données récupérées lors de l'utilisation de leur produit utilisant la reconnaissance vocale. \\ \\
 
+Socialement, cette dernière proposition a un fort impact sur les données des utilisateurs censée être privées mais leur besoin de connectivité à domicile a pris le dessus malgrès les scandales provoqués, ce qui traduit un potentiel de marché gigantesque dû à un atout technologique répondant à un besoin croissant. D'un point de vue social, ce type de produit permet à de nombreuses personnes seules de se sentir accompagnées bien que le compagnon ne soit pas tangible. On peut également souligné l'impact social qu'a eu ce type de produits sur une population passant de moins en moins de temps dehors, lors des confinements dûs à la pandémie mondiale les ventes d'assistants à reconnaissance vocale a augmenté. \\ 
+Il est également soulignable que ce type de solutions aident fortement les personnes agées ne sachant pas utiliser la technologie d'aujourd'hui ainsi que les handicapés physiques ppouvant contrôler de nombreux paramètres de leur domicile sans bouger.\\ \\
+
+Enfin, sur un plan écologique, le constat est moins bon, comme dans la plupart des milieux de la tech de nombreux composants ne sont pas recyclables et la production délocalisée dans les pays asiatiques fait que l'acquisition d'un produit utilisant la reconnaissance vocale aura coûté de nombreux kilomètres de trajets. D'un point de vue beaucoup plus centré sur notre projet à l'ECE Paris, du fait de nombreux tests, composants déffectueux ainsi que conseils ou ressources envoyée non fonctionnelles, nous avons cramé des composants, choses évitables et regrettables.\\ \\
+
+\noindent Comment est née l’invention / la technologie du projet, comment a-t-elle évolué ? \\ \\
+
+
+ \\
 
 \subsection*{B. Problématique}
 À quelle problématique répond le projet ?
@@ -451,7 +461,7 @@ Une section au moins aussi importante que celle sur le développement.
 \noindent Il est question ici de montrer les performances techniques du système et de valider le développement module par module puis au global (intégration) en accord avec la partie IV.
 
 \vspace{2mm}
-\noindent Chaque résultat (bien souvent des courbes) doit être décrit comme suit :
+\noindent Chaque résultat (bien souvent des courbes) doit être décrit comme suit : 
 \begin{itemize}
 	\item Ce qui a été fait ;
 	\item Ce que l’on est censé obtenir et critère de réussite du test ;
