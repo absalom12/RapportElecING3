@@ -366,6 +366,7 @@ C. Bilan sur le travail d'équipe ..............................................
 \section*{I. Objectifs}
 L'objectif de ce rapport est d'expliquer les différents objetifs de ce projet ainsi que les différentes étapes par lesquelles nous sommes passés pour y arriver. Nous abordons également le déroulement du projet de reconnaissance vocale d'un point de vu organisationnel et technique.\\ \\
 \unindent {La reconnaissance vocale consiste en l'analyse de la voix humaine, afin de la transformer en données utilisables pour réaliser des actions voulues. Tout passe par la voix, qui est identifiée puis captée en fréquences sonores. Vient ensuite l'analyse de ces fréquences sonores pour arriver à des données exploitables dans le cadre de notre projet. \\ \\
+
 Le but de ce projet est de créer un circuit électronique qui réceptionne un signal, le filtre afin de reconnaître la fréquence des signaux reçus, faire sa transformée de Fourier afin d'en déterminer les harmoniques nous permettant de reconnaître si le signal capté vient d'un utilisateur A, B ou C et d'agir en conséquence.}\\ \\
 
 \unindent {Le lecteur trouvera dans ce rapport différentes ressources utilisées et les documents produit nécessaires au bon déroulement du projet, des explications théoriques ainsi que des exemples imagés de nos réalisations pratiques.}\\
@@ -393,9 +394,9 @@ Futur OCRES, Clément a su participer activement et efficacement à ce projet d'
 Futur OCRES également, Thomas a comme qualités principales l'informatique (Arduino), un esprit de synthèse développé et la gestion de projet. Il a pour habitude de mener l'ensemble des projets auxquels il participe à bien. A déjà collaboré avec Mathis sur le projet d'informatique en JAVA. \\ 
 
 \subsection*{B. Organisation de l'équipe}
-Mathis, chef de projet, le plus à l'aise en électronique du groupe, il a principalement travaillé sur le montage électronique du projet, fais des retours sur la partie Arduino ainsi que les différents tests permettant de tester la fonctionnilaté pratique du projet. \\
+Mathis, chef de projet, le plus à l'aise en électronique du groupe, il a principalement travaillé sur le montage électronique du projet, une partie de l'Arduino ainsi que le modèle de l'IA permettant de détecter les commandes oralement évoquées. \\
 
-Clément, compétent en électronique théorique, a su faire preuve de rigueur dans ses démonstrations pour prouver de façon théorique le montage dont nous avons besoin pour réaliser la reconnaissance vocale à partir de l'Arduino donnée ainsi que les valeurs des composants choisies. Il a été un vecteur de communication enter Mathis et Thomas. \\
+Clément, compétent en électronique théorique, a su faire preuve de rigueur dans ses démonstrations pour prouver de façon théorique le montage dont nous avons besoin pour réaliser la reconnaissance vocale à partir de l'Arduino donnée ainsi que les valeurs des composants choisies. Il a été un vecteur de communication entre Mathis et Thomas ainsi qu'une grande aide dans la conception du modèle de l'IA grâce à son expérience dans la matière acquerit lors de son semestre à l'international. \\
 
 
 Thomas, en ses qualités de développeur, a travaillé principalement sur le code Arduino à partir de la bibliothéque Arduino sur la FFT ainsi que sur le rapport en collaboration avec Clément. Il a également apporté son expérience acquise en dehors des cours en gestion de projet pour organiser l'avancement de ce projet d'électronique. \\
@@ -407,7 +408,7 @@ Comment est utilisé le temps alloué au projet ?
 \section*{IV. Contexte et problématique}
 \subsection*{A. Contexte}
 Considéré aujourd'hui comme gadgets high-tech, les assistants à reconnaissance comme Siri (Apple) ou Alexa (Amazon) sont vendus à plus de 200 millions d'exemplaires à travers le monde. Un nombre important lié au phénomène de full connectivité amenée par la digitalisation de notre monde, les utilisateurs ne veulent plus utiliser de télécommandes pour commander les appareils électroniques de leur domicile. \\ \\
-Économiquement, on peut donc dire que la reconnaissance vocale est applicable au moins à ce type d'applications de full connectivité, croissantes sur le marché. Relativement simple à faire, la marge réalisée sur la vente est presque entièrement réalisée par la plus-value technologique apportée par la conception électronique du produit. \\ 
+Économiquement, on peut donc dire que la reconnaissance vocale est applicable au moins à ce type d'applications de full connectivité, croissantes sur le marché. Relativement simple à faire, la marge réalisée sur la vente est presque entièrement réalisée par la plus-value technologique apportée par la conception électronique et informatique du produit. \\ 
 De plus, les GAFA, leaders de ce type de solutions réalisent de nombreux revenus grâce à l'ensemble des données récupérées lors de l'utilisation de leur produit utilisant la reconnaissance vocale. \\ \\
 
 Socialement, cette dernière proposition a un fort impact sur les données des utilisateurs censée être privées mais leur besoin de connectivité à domicile a pris le dessus malgrès les scandales provoqués, ce qui traduit un potentiel de marché gigantesque dû à un atout technologique répondant à un besoin croissant. D'un point de vue social, ce type de produit permet à de nombreuses personnes seules de se sentir accompagnées bien que le compagnon ne soit pas tangible. On peut également souligné l'impact social qu'a eu ce type de produits sur une population passant de moins en moins de temps dehors, lors des confinements dûs à la pandémie mondiale les ventes d'assistants à reconnaissance vocale a augmenté. \\ 
@@ -416,24 +417,40 @@ Il est également soulignable que ce type de solutions aident fortement les pers
 Enfin, sur un plan écologique, le constat est moins bon, comme dans la plupart des milieux de la tech de nombreux composants ne sont pas recyclables et la production délocalisée dans les pays asiatiques fait que l'acquisition d'un produit utilisant la reconnaissance vocale aura coûté de nombreux kilomètres de trajets. D'un point de vue beaucoup plus centré sur notre projet à l'ECE Paris, du fait de nombreux tests, composants déffectueux ainsi que conseils ou ressources envoyée non fonctionnelles, nous avons cramé des composants, choses évitables et regrettables.\\ \\ \\ \\ \\
 
 \noindent Un point d'histoire pour commencer, les travaux sur la reconnaissance de la parole datent du début du xxe siècle. Le premier système pouvant être considéré comme faisant de la reconnaissance de la parole date de 1952. Ce système avait pour objectif de reconnaître des chiffres isolés à l'aide de la voix uniquement. \\ 
-Il s'en est suivi un développement exponentielle de la technologie, en passant par une reconnaissance des mots isolés, les premiers produits commerciaux de reconnaissances de mots, commercialisation d'un système de reconnaissance à microprocesseurs sur une carte de circuits imprimés, les premières commandes vocales à bord d'avion de chasse (commande française) avant de s'orienter vers des téléphones avec traduiction automatiques ainsi que comme évoqué précédemment les assistants à reconnaissance vocale à domicile, Alexa ou Siri. \\ \\
+Il s'en est suivi un développement exponentielle de la technologie, en passant par une reconnaissance des mots isolés, les premiers produits commerciaux de reconnaissances de mots, commercialisation d'un système de reconnaissance à microprocesseurs sur une carte de circuits imprimés, les premières commandes vocales à bord d'avion de chasse (commande française) avant de s'orienter vers des téléphones avec traduiction automatiques ainsi que comme évoqué précédemment les assistants à reconnaissance vocale à domicile et l'IA associé à cette reconnaissance vocale, Alexa ou Siri. \\ \\
 Avec une technologie évoluant aussi vite, il est important de pouvoir se projet sur son utilisation futures et ses limites. \\ \\
 Avec la récupération des données utilisateurs par les GAFA, nous sommes obligé de parler des potentielles dérives de ces technologies pouvant être utilisé à des fins de suivi de la population dans les lieux publics pour le pire scènario. Dans un scènario plus positif on peut penser à une digitalisation de l'ensemble des commandes grâce à la reconnaissance vocale, ce qui permettrait d'éviter les contacts avec des bornes publiques et donc limiter les échanges de bactéries / maladies, il est également possible d'aborder la démocratisation de la sécurité basée sur la détection de la voix de l'utilisateur, difficilement reproductible. \\ \\
 
 \subsection*{B. Problématique}
-Notre projet répond à la problèmatique suivante: Comment utiliser un appareil électronique à l'aide de la voix ou des sons produits uniquement ?
+Notre projet répond à la problèmatique suivante: \\ \textbf{Comment utiliser un appareil électronique à l'aide de la voix ou des sons produits uniquement ?} \\ \\
 
 \subsection*{C. Spécifications techniques}
-Quelles sont les spécifications techniques du projet ?\\
-\noindent \textbf{NB} : Certains projets d’électronique à l’ECE n’en ont pas.
+Les spécifications techniques du projet ne sont pas nombreuses mais il est nécessaire de les lister: \\ \\
+\begin{itemize}
+        \item \textbf{Utilisation d'une Arduino Nano.}
+        \item \textbf{Utilisation d'un micro fourni par l'école.}
+        \item \textbf{Passez par la transformée de Fourier à partir de la bibliothèque Arduino FFT.} 
+\end{itemize}
+\\
 
 \newpage
 \section*{V. Conception}
 \subsection*{A. Architecture fonctionnelle}
 Quelle est l’architecture fonctionnelle du projet ? \\
-\noindent \textbf{NB} : Les fonctionnalités sont des verbes à l’infinitif suivi de compléments.\\
-\noindent À ce stade, aucun choix technique n’est fait.
+\noindent \textbf{NB} : Les fonctionnalités sont des verbes à l’infinitif suivi de compléments.\\ \\
+\begin{itemize}
+        \item Capter le signal sonore émit grâce au circuit électronique équipe d'un micro
+\indent \item Filtrer le signal
+\indent \item Récupérer le signal et afficher sur l'écran LED intégré au circuit 
+\indent \item Afficher la courbe de ce signal sur le traceur série dans l'application Arduino 
+\indent \item Transformer ce signal temporel en fréquentiel grâce à l'analyse de Fourier 
+\indent \item Détecter avec les premières harmoniques l'empreinte fréquentielle d'une voix
+\indent \item Corréler notre modèle IA à ces signaux en fréquence pour reconnaître les commandes vocales de l'utilisateur 
+\indent \item Actionner des fonctionnalités correspondantes selon ces harmoniques 
+\indent \item Effectuer ces actions et les afficher sur l'écran LED du circuit 
+\end{itemize}
 
+\vspace{3mm}
 \subsection*{B. Architecture matérielle}
 Quel matériel est utilisé et pourquoi ?\\
 \noindent Comment les différentes briques techniques sont connectées entre elles ?\\
@@ -456,7 +473,6 @@ Le lecteur doit être capable de comprendre les enjeux techniques et de dévelop
 
 \newpage
 \section*{VII. Tests et validation}
-Une section au moins aussi importante que celle sur le développement.
 
 \vspace{2mm}
 \noindent Il est question ici de montrer les performances techniques du système et de valider le développement module par module puis au global (intégration) en accord avec la partie IV.
@@ -467,6 +483,16 @@ Une section au moins aussi importante que celle sur le développement.
 	\item Ce qui a été fait ;
 	\item Ce que l’on est censé obtenir et critère de réussite du test ;
 	\item Ce que l’on obtient ;
+	\item Conclusion : validation ou non du bon fonctionnement du module.
+\end{itemize}
+
+\noindent Test concernant l'entrainement de notre modèle d'IA : 
+\begin{itemize}
+	\item Nous avons réalisé à un modèle d'IA en Arduino afin d'améliorer la précision des signaux captés et mieux reconnaître les lettres/chiffres/claps captés;
+	\item On est censé obtenir une suite de courbe qui se lisse au fur et à mesure des tests grâce au machine learning pour au final avoir une courbe "moyenne" du signal correspondant au mot capté par le micro;
+	\item Ce que l’on obtient est visible sur la photo ci-dessous, nous avons entrainé notre modèle pour détecter au mieux les chiffres 1,2,3 et un clap comme demandé dans le brief du projet:
+	\includegraphics[width=\textwidth]{training_IAArduino.png}
+	\includegraphics[width=\textwidth]{test_123clap.png}
 	\item Conclusion : validation ou non du bon fonctionnement du module.
 \end{itemize}
 
