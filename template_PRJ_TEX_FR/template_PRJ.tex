@@ -466,9 +466,19 @@ Comment fonctionne le programme\\
 L’idée est de présenter ici comment ont été développés les différents blocs du projet. Cela peut rassembler des calculs théoriques, des choix techniques, etc. et surtout bien expliquer le concept clef derrière sa fabrication.
 Le lecteur doit être capable de comprendre les enjeux techniques et de développer le module en question à l’aide de ces sous-sections.
 
-\subsection*{A. Module 1}
-\subsection*{B. Module 2}
-\subsection*{C. Module 3}
+\subsection*{A. Module 1: Amplification du signal }
+L'amplification du signal est un élément clé de notre projet puisque le microphone que nous utilisons, le capteur de son KY-038, est assez peu sensible et par conséquent, les signaux reçus doivent être amplifiés.\\ 
+Le micro comporte 2 LEDs: une qui est allumée quand le capteur est alimenté, et la deuxième qui est normalement allumée uniquement lorsqu'un son est détecté. 
+Nous avons donc du ajuster le potentiomètre de notre micro en premier lieu afin que cette dernière ne soit allumée qu'en présence de son. Pour cela il nous a fallu le tourner dans le sens des aiguilles d'une montre jusqu'à ce que la valeur analogique lue atteigne environ 512 vu que l'ADC de 10 bits peut comporter 2 à la puissance 10 valeurs, soit 1024 valeurs. \\  
+La pleine échelle d'un convertisseur analogique-numérique est divisée en autant de plages d’égale dimension qu’il y a d’états possibles de la sortie numérique. Chaque plage est associée à un code numérique représentant la tension analogique d’entrée. Ainsi, grâce à l'amplification du signal d'entrée, nous obtenons un signal en pleine échelle entre 0V et 5V. Notre projet présente également un filtre anti repliement afin d'éviter tout recouvrement de spectre lors de la transformation de Fourier. La fréquence maximale captée par notre micro est de 5kHz, nous avons donc du respecter la condition de Shannon, à savoir Fe > 2*Fmax aet avons donc pris une fréquence d'échantillonnage de 15kHz.
+
+
+\subsection*{B. Module 2: Afficher en temps réel le spectre en amplitude}
+Pour afficher le spectre du signal, nous nous sommes servi du  
+
+\subsection*{C. Module 3: Allumer / éteindre toutes les LEDs lorsque l’on claque des mains }
+\subsection*{D. Module 4: Reconnaitre « un », « deux » et « trois » pour allumer / éteindre la 1ère, 2nde }
+
 
 
 \newpage
