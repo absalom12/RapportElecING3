@@ -472,13 +472,18 @@ Le micro comporte 2 LEDs: une qui est allumée quand le capteur est alimenté, e
 Nous avons donc du ajuster le potentiomètre de notre micro en premier lieu afin que cette dernière ne soit allumée qu'en présence de son. Pour cela il nous a fallu le tourner dans le sens des aiguilles d'une montre jusqu'à ce que la valeur analogique lue atteigne environ 512 vu que l'ADC de 10 bits peut comporter 2 à la puissance 10 valeurs, soit 1024 valeurs. \\  
 La pleine échelle d'un convertisseur analogique-numérique est divisée en autant de plages d’égale dimension qu’il y a d’états possibles de la sortie numérique. Chaque plage est associée à un code numérique représentant la tension analogique d’entrée. Ainsi, grâce à l'amplification du signal d'entrée, nous obtenons un signal en pleine échelle entre 0V et 5V. Notre projet présente également un filtre anti repliement afin d'éviter tout recouvrement de spectre lors de la transformation de Fourier. La fréquence maximale captée par notre micro est de 5kHz, nous avons donc du respecter la condition de Shannon, à savoir Fe > 2*Fmax aet avons donc pris une fréquence d'échantillonnage de 15kHz.
 
-
 \subsection*{B. Module 2: Afficher en temps réel le spectre en amplitude}
-Pour afficher le spectre du signal, nous nous sommes servi du  
+Pour afficher le spectre du signal, nous nous sommes servi du TP2 réalisé précédemment durant le semestre. Celui-ci utilise les fonctions de FFT de la librairie du même nom pour transformer notre signal dans le domaine fréquentiel puis le visualiser à l'aide de l'écran OLED de notre circuit. \\ 
+Grâce à la fréquence d'échantillonnage élevée que nous avons choisie et à la vitesse de lecture et de conversion du signal, nous pouvons observer clairement le spectre de notre signal en temps réel avec une amplitude précise. Nous avons également développé une fonction qui permet d'afficher les décibels mesurés et d'afficher la valeur également sur notre écran OLED.
 
 \subsection*{C. Module 3: Allumer / éteindre toutes les LEDs lorsque l’on claque des mains }
+
+Ce module est en quelque sorte la base de notre projet puisqu'il représente la première fonctionnalité qui répond directement à la problématique de notre projet à savoir réaliser une action à partir de voix ou de sons générés. \\ 
+Pour ce module, nous avons tout d'abord utilisé un filtre qui permet d'éliminer les basses fréquences, de façon à ce que le bruit ambient ne soit pas détecté et donc que le capteur ne se déclenche pas de manière intempestive sans qu'on le veuille. Nous avons établi qu'un "clap" se caractérise par un bruit fort et très court qui sera plus facilement mis en évidence par l'amplificateur opérationnel. Ainsi lorsqu'un tel bruit sera détecté, les 3 LEDs de notre circuit vont s'allumer si elles étaient éteintes et s'éteindre si elles étaient allumées. \\ 
+
 \subsection*{D. Module 4: Reconnaitre « un », « deux » et « trois » pour allumer / éteindre la 1ère, 2nde }
 
+C'est à partir du module précédent que nous avons effectué celui-ci. En effet, sur le même principe nous avons fait en sorte que lorsque l'on dit "un" et que ce son est capté par notre micro, alors la LED numéro 1 s'allume ou s'éteint en fonction de l'état dans lequel elle était, de même pour les autres LEDs. Cela est possible grâce au machine learning que nous avons effectué: nous avons appris à notre système quelles actions il doit réaliser en fonction de ce qu'il capte. A force d'entrainement, la précision devient de plus en plus grande et notre système reconnait de mieux en mieux les informations qu'on lui transmet.
 
 
 \newpage
